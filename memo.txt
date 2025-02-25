@@ -38,3 +38,6 @@ mern-mini-project/
 ✔️ pages/Home.jsx, Blogs.jsx, Projects.jsx 만들기
 ✔️ routes/index.jsx에서 React Router 설정하기
 
+
+git add dist -f
+git subtree push --prefix dist origin gh-pages(한번만)
