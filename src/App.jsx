@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import Navbar from "./components/Navbar";
 import Blogs from "./pages/Blogs";
 import Projects from './pages/Projects'
-import Weather from "./components/Weather";
+import GetWeather from "./pages/GetWeather";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path='/projects/get-weather' element={<Weather />} />
+          <Route path='/projects/get-weather' element={<GetWeather />} />
         </Routes>
         </div>
       </BrowserRouter>
