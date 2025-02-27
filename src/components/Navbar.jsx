@@ -6,7 +6,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
         {/* 로고 */}
         <NavLink to="/" className="text-2xl font-bold text-stone-50">
-          MyLogo
+          🚀David J. Hwang
         </NavLink>
 
         {/* 네비게이션 버튼들 */}
