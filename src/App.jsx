@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Home from './pages/Home'
+import Home from "./pages/home/Home";
 import Navbar from "./components/Navbar";
-import Blogs from "./pages/Blogs";
-import Projects from './pages/Projects'
-import GetWeather from "./pages/GetWeather";
+import Blogs from "./pages/blogs/Blogs";
+import Projects from "./pages/projects/Projects";
+import GetWeather from "./pages/projects/GetWeather";
 
 function App() {
   return (
@@ -12,12 +12,12 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <div className="pt-16">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path='/projects/get-weather' element={<GetWeather />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/get-weather" element={<GetWeather />} />
+          </Routes>
         </div>
       </BrowserRouter>
     </div>

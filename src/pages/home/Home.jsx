@@ -1,5 +1,5 @@
-import DigitalClock from "../components/DigitalClock";
-import Button from "../components/Button";
+import DigitalClock from "../../components/DigitalClock";
+import Button from "../../components/Button";
 
 function Home() {
   return (
