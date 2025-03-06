@@ -13,7 +13,10 @@ function Home() {
         <Button to="https://land.naver.com">Naver Real Estate</Button>
       </div>
 
-      <div className="mt-8 flex flex-row justify-center items-center gap-4">
+      <div className="mt-4 flex flex-row justify-center items-center gap-4">
+        <Button to="https://github.com">Github</Button>
+        <Button to="https://tailwindcss.com/">TailwindCSS</Button>
+        <Button to="https://mui.com/">Material UI</Button>
         <Button to={"https://youtu.be/DHNFYhNv81o"}>유도명상</Button>
       </div>
 
