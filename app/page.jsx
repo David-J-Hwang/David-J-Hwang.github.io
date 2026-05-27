@@ -1,4 +1,5 @@
 import Image from "next/image";
+import DigitalClock from "../components/DigitalClock";
 import QuickLink from "../components/QuickLink";
 
 const quickLinkClassName =
@@ -50,8 +51,8 @@ const quickLinks = [
 export default function HomePage() {
   return (
     <section className="min-h-[calc(100vh-4rem)] bg-[radial-gradient(circle_at_top_left,#d9f99d_0,#f7fbf7_34%,#eef7f1_100%)] px-5 py-10 dark:bg-[radial-gradient(circle_at_top_left,#14532d_0,#07110d_38%,#0d1712_100%)]">
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
-        <div className="max-w-2xl">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8">
+        <div className="max-w-3xl">
           <div className="mb-7 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">
             <Image
               src="/light-bulb.png"
@@ -84,11 +85,13 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="w-full max-w-md rounded-lg border border-emerald-200 bg-white/80 p-5 shadow-xl shadow-emerald-950/10 backdrop-blur dark:border-emerald-900 dark:bg-zinc-950/70 dark:shadow-black/30">
+        <DigitalClock />
+
+        <div className="w-full rounded-lg border border-emerald-200 bg-white/80 p-5 shadow-xl shadow-emerald-950/10 backdrop-blur dark:border-emerald-900 dark:bg-zinc-950/70 dark:shadow-black/30">
           <h2 className="text-base font-bold text-zinc-950 dark:text-white">
             Quick Links
           </h2>
-          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {quickLinks.map((link) => (
               <QuickLink
                 key={link.href}
