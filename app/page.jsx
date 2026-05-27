@@ -1,9 +1,12 @@
 import Image from "next/image";
 import DigitalClock from "../components/DigitalClock";
 import QuickLink from "../components/QuickLink";
+import WeatherPanel from "../components/WeatherPanel";
 
 const quickLinkClassName =
   "border border-zinc-200 bg-white text-zinc-900 hover:border-emerald-300 hover:bg-emerald-50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:border-emerald-700 dark:hover:bg-zinc-800";
+const heroLinkClassName =
+  "min-h-12 min-w-36 border border-emerald-600 bg-emerald-700 px-6 text-white shadow-lg shadow-emerald-900/20 hover:border-emerald-700 hover:bg-emerald-800 dark:border-emerald-300 dark:bg-emerald-400 dark:text-zinc-950 dark:shadow-emerald-950/40 dark:hover:border-emerald-200 dark:hover:bg-emerald-300";
 
 const quickLinks = [
   {
@@ -76,16 +79,18 @@ export default function HomePage() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <QuickLink href="/projects" variant="primary">
+            <QuickLink href="/projects" className={heroLinkClassName}>
               Projects
             </QuickLink>
-            <QuickLink href="/blog" variant="secondary">
+            <QuickLink href="/blog" className={heroLinkClassName}>
               Blog
             </QuickLink>
           </div>
         </div>
 
         <DigitalClock />
+
+        <WeatherPanel />
 
         <div className="w-full rounded-lg border border-emerald-200 bg-white/80 p-5 shadow-xl shadow-emerald-950/10 backdrop-blur dark:border-emerald-900 dark:bg-zinc-950/70 dark:shadow-black/30">
           <h2 className="text-base font-bold text-zinc-950 dark:text-white">
