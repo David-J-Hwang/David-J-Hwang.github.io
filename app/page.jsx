@@ -25,7 +25,8 @@ const quickLinks = [
   {
     label: "GitHub",
     href: "https://github.com",
-    className: "bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-white",
+    className:
+      "border border-[#0d1117] bg-[#24292f] text-[#f6f8fa] hover:bg-[#0d1117] dark:border-zinc-500 dark:bg-[#f6f8fa] dark:text-[#0d1117] dark:hover:bg-white",
   },
   {
     label: "Tailwind CSS",
