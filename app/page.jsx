@@ -1,47 +1,49 @@
 import Image from "next/image";
 import QuickLink from "../components/QuickLink";
 
+const quickLinkClassName =
+  "border border-zinc-200 bg-white text-zinc-900 hover:border-emerald-300 hover:bg-emerald-50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:border-emerald-700 dark:hover:bg-zinc-800";
+
 const quickLinks = [
   {
     label: "YouTube",
     href: "https://youtube.com",
-    className: "bg-red-600 text-white hover:bg-red-700",
+    accentClassName: "bg-red-600",
   },
   {
     label: "Naver",
     href: "https://naver.com",
-    className: "bg-[#03c75a] text-white hover:bg-[#02b351]",
+    accentClassName: "bg-[#03c75a]",
   },
   {
     label: "Naver Maps",
     href: "https://map.naver.com",
-    className: "bg-emerald-600 text-white hover:bg-emerald-700",
+    accentClassName: "bg-emerald-600",
   },
   {
     label: "Naver Real Estate",
     href: "https://land.naver.com",
-    className: "bg-lime-700 text-white hover:bg-lime-800",
+    accentClassName: "bg-lime-700 dark:bg-lime-500",
   },
   {
     label: "GitHub",
     href: "https://github.com",
-    className:
-      "border border-[#0d1117] bg-[#24292f] text-[#f6f8fa] hover:bg-[#0d1117] dark:border-zinc-500 dark:bg-[#f6f8fa] dark:text-[#0d1117] dark:hover:bg-white",
+    accentClassName: "bg-zinc-950 dark:bg-white",
   },
   {
     label: "Tailwind CSS",
     href: "https://tailwindcss.com/",
-    className: "bg-sky-500 text-white hover:bg-sky-600",
+    accentClassName: "bg-sky-500",
   },
   {
     label: "Material UI",
     href: "https://mui.com/",
-    className: "bg-blue-600 text-white hover:bg-blue-700",
+    accentClassName: "bg-blue-600",
   },
   {
     label: "유도명상",
     href: "https://youtu.be/DHNFYhNv81o",
-    className: "bg-amber-500 text-zinc-950 hover:bg-amber-400",
+    accentClassName: "bg-amber-500",
   },
 ];
 
@@ -91,7 +93,8 @@ export default function HomePage() {
               <QuickLink
                 key={link.href}
                 href={link.href}
-                className={link.className}
+                className={quickLinkClassName}
+                accentClassName={link.accentClassName}
               >
                 {link.label}
               </QuickLink>

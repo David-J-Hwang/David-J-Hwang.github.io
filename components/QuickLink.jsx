@@ -9,11 +9,12 @@ export default function QuickLink({
   href,
   children,
   variant,
+  accentClassName,
   className = "",
 }) {
   const isExternal = href.startsWith("http");
   const baseClass =
-    "inline-flex min-h-11 items-center justify-center rounded-md px-5 py-2.5 text-sm font-bold shadow-sm transition focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 dark:focus:ring-offset-zinc-950";
+    "inline-flex min-h-11 items-center justify-center gap-2.5 rounded-md px-5 py-2.5 text-sm font-bold shadow-sm transition focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 dark:focus:ring-offset-zinc-950";
   const variantClass = variant ? variants[variant] : className;
 
   return (
@@ -23,7 +24,17 @@ export default function QuickLink({
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noreferrer" : undefined}
     >
-      {children}
+      {accentClassName ? (
+        <>
+          <span
+            aria-hidden="true"
+            className={`h-2.5 w-2.5 rounded-full ${accentClassName}`}
+          />
+          <span>{children}</span>
+        </>
+      ) : (
+        children
+      )}
     </Link>
   );
 }
