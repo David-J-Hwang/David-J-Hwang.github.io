@@ -12,6 +12,16 @@ const projects = [
     href: "https://david-j-hwang.github.io/lucky-wheel",
   },
   {
+    title: "Overwatch Lucky Wheel",
+    description: "오버워치 캐릭터를 무작위로 뽑는 럭키 휠 프로젝트입니다.",
+    href: "https://david-j-hwang.github.io/overwatch-lucky-wheel",
+  },
+  {
+    title: "Footprint Korea",
+    description: "한국 지도 기반으로 발자취를 기록하는 미니 프로젝트입니다.",
+    href: "https://david-j-hwang.github.io/footprint-korea",
+  },
+  {
     title: "Analog Clock",
     description: "기존 아날로그 시계 프로젝트입니다.",
     href: "https://david-j-hwang.github.io/analog-clock",
