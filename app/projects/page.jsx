@@ -1,4 +1,4 @@
-import QuickLink from "../../components/QuickLink";
+import PaginatedProjects from "../../components/PaginatedProjects";
 
 const projects = [
   {
@@ -20,6 +20,11 @@ const projects = [
     title: "Footprint Korea",
     description: "한국 지도 기반으로 발자취를 기록하는 미니 프로젝트입니다.",
     href: "https://david-j-hwang.github.io/footprint-korea",
+  },
+  {
+    title: "Get Weather",
+    description: "도시를 검색해서 현재 날씨를 확인하는 날씨 미니 프로젝트입니다.",
+    href: "https://get-weather.vercel.app",
   },
   {
     title: "Analog Clock",
@@ -52,26 +57,7 @@ export default function ProjectsPage() {
           페이지로 이동하는 허브 형태로 정리합니다.
         </p>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
-          {projects.map((project) => (
-            <article
-              key={project.href}
-              className="rounded-lg border border-emerald-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-emerald-900 dark:bg-zinc-950"
-            >
-              <h2 className="text-xl font-bold text-zinc-950 dark:text-white">
-                {project.title}
-              </h2>
-              <p className="mt-3 min-h-12 text-zinc-700 dark:text-zinc-300">
-                {project.description}
-              </p>
-              <div className="mt-5">
-                <QuickLink href={project.href} variant="secondary">
-                  Visit Project
-                </QuickLink>
-              </div>
-            </article>
-          ))}
-        </div>
+        <PaginatedProjects projects={projects} />
       </div>
     </section>
   );
