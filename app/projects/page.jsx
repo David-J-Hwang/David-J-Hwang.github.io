@@ -2,6 +2,12 @@ import PaginatedProjects from "../../components/PaginatedProjects";
 
 const projects = [
   {
+    title: "Neumorphic Calculator",
+    description:
+      "Neumorphism 디자인을 적용한 계산기 프로젝트입니다. 환율, 단위, 날짜 계산 기능까지 확장할 예정입니다.",
+    href: "https://david-j-hwang.github.io/neumorphic-calculator",
+  },
+  {
     title: "Footprint Korea",
     description: "한국 지도 기반으로 발자취를 기록하는 미니 프로젝트입니다.",
     href: "https://david-j-hwang.github.io/footprint-korea",
