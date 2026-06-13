@@ -2,6 +2,12 @@ import PaginatedProjects from "../../components/PaginatedProjects";
 
 const projects = [
   {
+    title: "goal-tree",
+    description:
+      "목표를 트리 구조로 정리하고 큰 목표를 작은 단계로 나누어 관리하는 프로젝트입니다.",
+    href: "https://goal-tree-eight.vercel.app/",
+  },
+  {
     title: "Neumorphic Calculator",
     description:
       "Neumorphism 디자인을 적용한 계산기 프로젝트입니다. 환율, 단위, 날짜 계산 기능까지 확장할 예정입니다.",
