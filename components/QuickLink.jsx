@@ -11,6 +11,7 @@ export default function QuickLink({
   variant,
   accentClassName,
   className = "",
+  tabIndex,
 }) {
   const isExternal = href.startsWith("http");
   const baseClass =
@@ -23,6 +24,7 @@ export default function QuickLink({
       className={`${baseClass} ${variantClass}`}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noreferrer" : undefined}
+      tabIndex={tabIndex}
     >
       {accentClassName ? (
         <>
