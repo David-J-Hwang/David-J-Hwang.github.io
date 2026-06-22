@@ -58,8 +58,8 @@ export default function HomePage() {
         <div className="max-w-3xl">
           <div className="mb-7 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">
             <Image
-              src="/light-bulb.png"
-              alt=""
+              src="/favicon.svg"
+              alt="새싹"
               width={32}
               height={32}
               className="h-8 w-8"

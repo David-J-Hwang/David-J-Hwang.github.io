@@ -12,7 +12,12 @@ export const metadata = {
   title: "David J. Hwang",
   description: "David J. Hwang's personal portfolio and project hub.",
   icons: {
-    icon: "/light-bulb.png",
+    icon: [
+      {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+      },
+    ],
   },
 };
 
