@@ -4,6 +4,8 @@ import { useState } from "react";
 import QuickLink from "./QuickLink";
 
 const PROJECTS_PER_PAGE = 4;
+const PROJECT_CARD_CLASS =
+  "flex min-h-52 flex-col rounded-lg border border-emerald-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-emerald-900 dark:bg-zinc-950";
 
 export default function PaginatedProjects({ projects }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -13,6 +15,8 @@ export default function PaginatedProjects({ projects }) {
     startIndex,
     startIndex + PROJECTS_PER_PAGE,
   );
+  const emptySlots =
+    totalPages > 1 ? PROJECTS_PER_PAGE - visibleProjects.length : 0;
 
   function moveToPage(nextPage) {
     setCurrentPage(Math.min(Math.max(nextPage, 1), totalPages));
@@ -24,7 +28,7 @@ export default function PaginatedProjects({ projects }) {
         {visibleProjects.map((project) => (
           <article
             key={project.href}
-            className="rounded-lg border border-emerald-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-emerald-900 dark:bg-zinc-950"
+            className={PROJECT_CARD_CLASS}
           >
             <h2 className="text-xl font-bold text-zinc-950 dark:text-white">
               {project.title}
@@ -32,12 +36,19 @@ export default function PaginatedProjects({ projects }) {
             <p className="mt-3 min-h-12 text-zinc-700 dark:text-zinc-300">
               {project.description}
             </p>
-            <div className="mt-5">
+            <div className="mt-auto pt-5">
               <QuickLink href={project.href} variant="secondary">
                 Visit Project
               </QuickLink>
             </div>
           </article>
+        ))}
+        {Array.from({ length: emptySlots }, (_, index) => (
+          <article
+            key={`project-placeholder-${index}`}
+            aria-hidden="true"
+            className={`${PROJECT_CARD_CLASS} invisible pointer-events-none`}
+          />
         ))}
       </div>
 
@@ -49,10 +60,11 @@ export default function PaginatedProjects({ projects }) {
           <div aria-hidden="true" className="hidden sm:block" />
           <div className="flex flex-wrap justify-center gap-2">
             <PaginationButton
+              ariaLabel="이전 페이지"
               disabled={currentPage === 1}
               onClick={() => moveToPage(currentPage - 1)}
             >
-              Prev
+              {"<"}
             </PaginationButton>
             {Array.from({ length: totalPages }, (_, index) => {
               const pageNumber = index + 1;
@@ -75,10 +87,11 @@ export default function PaginatedProjects({ projects }) {
               );
             })}
             <PaginationButton
+              ariaLabel="다음 페이지"
               disabled={currentPage === totalPages}
               onClick={() => moveToPage(currentPage + 1)}
             >
-              Next
+              {">"}
             </PaginationButton>
           </div>
           <p className="text-center text-sm font-bold text-zinc-600 dark:text-zinc-300 sm:text-right">
@@ -90,13 +103,14 @@ export default function PaginatedProjects({ projects }) {
   );
 }
 
-function PaginationButton({ children, disabled, onClick }) {
+function PaginationButton({ ariaLabel, children, disabled, onClick }) {
   return (
     <button
       type="button"
+      aria-label={ariaLabel}
       onClick={onClick}
       disabled={disabled}
-      className="min-h-10 cursor-pointer rounded-md border border-emerald-200 bg-white px-3 text-sm font-bold text-emerald-800 transition hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-45 dark:border-emerald-900 dark:bg-zinc-950 dark:text-emerald-200 dark:hover:bg-emerald-950 dark:focus:ring-offset-zinc-950"
+      className="flex h-10 min-w-10 cursor-pointer items-center justify-center rounded-md border border-emerald-200 bg-white px-3 text-sm font-bold text-emerald-800 transition hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-45 dark:border-emerald-900 dark:bg-zinc-950 dark:text-emerald-200 dark:hover:bg-emerald-950 dark:focus:ring-offset-zinc-950"
     >
       {children}
     </button>
