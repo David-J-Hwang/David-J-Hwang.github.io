@@ -10,9 +10,19 @@ const heroLinkClassName =
 
 const quickLinks = [
   {
+    label: "쉬운성경",
+    href: "https://www.godpia.com/",
+    accentClassName: "bg-[#f01862]",
+  },
+  {
     label: "YouTube",
     href: "https://youtube.com",
     accentClassName: "bg-red-600",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com",
+    accentClassName: "bg-zinc-950 dark:bg-white",
   },
   {
     label: "Naver",
@@ -30,19 +40,9 @@ const quickLinks = [
     accentClassName: "bg-lime-700 dark:bg-lime-500",
   },
   {
-    label: "GitHub",
-    href: "https://github.com",
-    accentClassName: "bg-zinc-950 dark:bg-white",
-  },
-  {
     label: "Tailwind CSS",
     href: "https://tailwindcss.com/",
     accentClassName: "bg-sky-500",
-  },
-  {
-    label: "Material UI",
-    href: "https://mui.com/",
-    accentClassName: "bg-blue-600",
   },
   {
     label: "유도명상",
